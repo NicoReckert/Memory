@@ -8,19 +8,49 @@
 </head>
 
 <body>
-    <div class="all-content">
-        <div class="content">
-            <div class="div1">
-                <p class="text1">It’s play time.</p>
-                <p class="text2">Ready to play?</p>
+    <div class="page">
+        <main class="hero">
+            <div class="hero__text">
+                <h2 class="hero__subtitle">It’s play time.</h2>
+                <h1 class="hero__title">Ready to play?</h1>
             </div>
-            <button class="button1"><img src="./src/assets/icons/stadia_controller.svg" alt="">Play<img
+            <button class="hero__button"><img src="./src/assets/icons/stadia_controller.svg" alt="">Play<img
                     src="./src/assets/icons/Arrow 1.svg" alt=""></button>
-        </div>
+        </main>
     </div>
     <footer>
 
     </footer>
+    <div class="settings">
+        <h2 class="settings__title">Settings</h2>
+        <div class="settings__section">
+            <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/palette.svg" alt="">Game
+                themes</h3>
+            <ul class="settings__list">
+                <li class="settings__item"><input type="radio" name="theme">Code vibes theme</li>
+                <li class="settings__item"><input type="radio" name="theme">Gaming theme</li>
+                <li class="settings__item"><input type="radio" name="theme">DA Projects theme</li>
+                <li class="settings__item"><input type="radio" name="theme">Foods theme</li>
+            </ul>
+        </div>
+        <div class="settings__section">
+            <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/chess_pawn.svg"
+                    alt="">Choose player</h3>
+            <ul class="settings__list">
+                <li class="settings__item"><input type="radio" name="player">Blue</li>
+                <li class="settings__item"><input type="radio" name="player">Orange</li>
+            </ul>
+        </div>
+        <div class="settings__section">
+            <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/style.svg" alt="">Board
+                size</h3>
+            <ul class="settings__list">
+                <li class="settings__item"><input type="radio" name="size">16 cards</li>
+                <li class="settings__item"><input type="radio" name="size">24 cards</li>
+                <li class="settings__item"><input type="radio" name="size">36 cards</li>
+            </ul>
+        </div>
+    </div>
     <script type="module" src="./src/main.ts"></script>
 </body>
 

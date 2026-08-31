@@ -17,14 +17,14 @@ body {
     overflow-x: hidden;
 }
 
-.allcontent {
+.page {
     display: flex;
     flex-direction: column;
     width: 100%;
     flex: 1;
 }
 
-.content {
+.hero {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,35 +32,78 @@ body {
     width: 100%;
     min-height: 100dvh;
     background-color: #2F3131;
+
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__subtitle {
+        font-size: 48px;
+        color: #FFFFFF;
+        font-family: 'Almarai-Regular';
+    }
+
+    &__title {
+        font-size: 140px;
+        color: #FFFFFF;
+        font-family: 'RedRose-Bold';
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        background-color: #F0EA6E;
+        font-size: 40px;
+        font-family: 'RedRose-Bold';
+        margin-top: 85px;
+        gap: 40px 40px;
+    }
 }
 
-.div1 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-.text1 {
-    font-size: 48px;
-    color: #FFFFFF;
-    font-family: 'Almarai-Regular';
-}
-
-.text2 {
-    font-size: 140px;
-    color: #FFFFFF;
-    font-family: 'RedRose-Bold';
-}
-
-.button1 {
+.settings {
+    position: absolute;
+    inset: 0;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px;
-    background-color: #F0EA6E;
-    font-size: 40px;
-    font-family: 'RedRose-Bold';
-    margin-top: 85px;
-    gap: 40px 40px;
+    flex-direction: column;
+    gap: 54px;
+
+    &__title {
+        font-size: 54px;
+        font-family: 'RedRose-Bold';
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-family: 'Almarai-Bold';
+        gap: 6px;
+    }
+
+    &__list {
+        font-size: 20px;
+        font-family: 'Almarai-Regular';
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+    }
 }
