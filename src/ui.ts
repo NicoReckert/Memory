@@ -2,14 +2,16 @@ export const dom = {
     themeRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="theme"]')),
     playerRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="player"]')),
     sizeRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="size"]')),
-    settingsSummaryLabels: Array.from(document.querySelectorAll('.settings__summary-label'))
+    settingsSummaryLabels: Array.from(document.querySelectorAll('.settings__summary-label')),
+    settingsPreviewImg: document.querySelector<HTMLImageElement>('.settings__preview-image')
 };
 
 export function initDom() {
-    dom.themeRadioButtons.forEach(radio => {
+    dom.themeRadioButtons.forEach((radio, index) => {
         radio.addEventListener('change', () => {
             const theme = radio.parentElement?.textContent?.trim() ?? '';
             setTheme(theme);
+            if (dom.settingsPreviewImg) dom.settingsPreviewImg.src = `./src/assets/img/Theme Visual(${index + 1}).svg`;
         });
     });
 
