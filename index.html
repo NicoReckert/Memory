@@ -22,33 +22,53 @@
 
     </footer>
     <div class="settings">
-        <h2 class="settings__title">Settings</h2>
-        <div class="settings__section">
-            <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/palette.svg" alt="">Game
-                themes</h3>
-            <ul class="settings__list">
-                <li class="settings__item"><input type="radio" name="theme">Code vibes theme</li>
-                <li class="settings__item"><input type="radio" name="theme">Gaming theme</li>
-                <li class="settings__item"><input type="radio" name="theme">DA Projects theme</li>
-                <li class="settings__item"><input type="radio" name="theme">Foods theme</li>
-            </ul>
-        </div>
-        <div class="settings__section">
-            <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/chess_pawn.svg"
-                    alt="">Choose player</h3>
-            <ul class="settings__list">
-                <li class="settings__item"><input type="radio" name="player">Blue</li>
-                <li class="settings__item"><input type="radio" name="player">Orange</li>
-            </ul>
-        </div>
-        <div class="settings__section">
-            <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/style.svg" alt="">Board
-                size</h3>
-            <ul class="settings__list">
-                <li class="settings__item"><input type="radio" name="size">16 cards</li>
-                <li class="settings__item"><input type="radio" name="size">24 cards</li>
-                <li class="settings__item"><input type="radio" name="size">36 cards</li>
-            </ul>
+        <div class="settings__container">
+            <h2 class="settings__title">Settings</h2>
+            <div class="settings__content">
+                <div class="settings__options">
+                    <div class="settings__section">
+                        <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/palette.svg"
+                                alt="">Game
+                            themes</h3>
+                        <ul class="settings__list">
+                            <li class="settings__item"><input type="radio" name="theme">Code vibes theme</li>
+                            <li class="settings__item"><input type="radio" name="theme">Gaming theme</li>
+                            <li class="settings__item"><input type="radio" name="theme">DA Projects theme</li>
+                            <li class="settings__item"><input type="radio" name="theme">Foods theme</li>
+                        </ul>
+                    </div>
+                    <div class="settings__section">
+                        <h3 class="settings__subtitle"><img class="settings__icon"
+                                src="./src/assets/icons/chess_pawn.svg" alt="">Choose player</h3>
+                        <ul class="settings__list">
+                            <li class="settings__item"><input type="radio" name="player">Blue</li>
+                            <li class="settings__item"><input type="radio" name="player">Orange</li>
+                        </ul>
+                    </div>
+                    <div class="settings__section">
+                        <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/style.svg"
+                                alt="">Board
+                            size</h3>
+                        <ul class="settings__list">
+                            <li class="settings__item"><input type="radio" name="size">16 cards</li>
+                            <li class="settings__item"><input type="radio" name="size">24 cards</li>
+                            <li class="settings__item"><input type="radio" name="size">36 cards</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="settings__preview">
+                    <img class="settings__preview-image" src="./src/assets/img/Theme Visual(1).svg" alt="">
+                    <div class="settings__summary">
+                        <p class="settings__summary-label">Theme</p>
+                        <img class="settings__summary-line" src="./src/assets/img/Line 6.svg" alt="">
+                        <p class="settings__summary-label">Player</p>
+                        <img class="settings__summary-line" src="./src/assets/img/Line 6.svg" alt="">
+                        <p class="settings__summary-label">Board size</p>
+                        <button class="settings__start-button"><img class="settings__start-icon"
+                                src="./src/assets/icons/smart_display.svg" alt="">Start</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script type="module" src="./src/main.ts"></script>

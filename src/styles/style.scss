@@ -72,7 +72,7 @@ body {
     background-color: #FFFFFF;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     gap: 54px;
 
@@ -88,12 +88,18 @@ body {
         font-size: 24px;
         font-family: 'Almarai-Bold';
         gap: 6px;
+        padding-bottom: 12px;
     }
 
     &__list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
         font-size: 20px;
         font-family: 'Almarai-Regular';
         list-style: none;
+        gap: 12px;
     }
 
     &__item {
@@ -106,4 +112,101 @@ body {
         width: 25px;
         height: 25px;
     }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    &__summary {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 20px;
+        background-color: #F6F6F6;
+    }
+
+    &__summary-label {
+        font-size: 20px;
+        font-family: 'Almarai-Regular';
+    }
+
+    &__options {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 54px;
+    }
+
+    &__section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 170px;
+        gap: 54px;
+    }
+
+    &__preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    &__start-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 20px;
+        background-color: #F0EA6E;
+        border: none;
+        font-size: 20px;
+        font-family: 'RedRose-Bold';
+        gap: 8px;
+    }
+
+    &__start-icon {
+        width: 20px;
+        height: 16px;
+    }
+}
+
+.settings__item input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #303131;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.settings__item input[type="radio"]::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: #303131;
+    transition: transform 0.15s ease-in-out;
+}
+
+.settings__item input[type="radio"]:checked::before {
+    transform: scale(1);
 }
