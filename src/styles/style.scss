@@ -210,3 +210,87 @@ body {
 .settings__item input[type="radio"]:checked::before {
     transform: scale(1);
 }
+
+.game {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 41px 112px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__players {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #86E9D633;
+        padding: 17px 20px;
+        gap: 20px;
+    }
+
+    &__player {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__player-name-blue {
+        color: #2BB1FF;
+        font-size: 24px;
+        font-family: 'RedRose-Bold';
+    }
+
+    &__player-name-orange {
+        color: #F58E39;
+        font-size: 24px;
+        font-family: 'RedRose-Bold';
+    }
+
+    &__player-points-blue {
+        color: #2BB1FF;
+        font-size: 24px;
+        font-family: 'RedRose-Bold';
+    }
+
+    &__player-points-orange {
+        color: #F58E39;
+        font-size: 24px;
+        font-family: 'RedRose-Bold';
+    }
+
+    &__current-player {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__current-player-label {
+        font-size: 26px;
+        font-family: 'RedRose-Regular';
+        color: #FFFFFF;
+    }
+
+    &__exit-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #86E9D633;
+        padding: 16px 24px;
+        font-family: 'RedRose-Bold';
+        font-size: 24px;
+        color: #FFFFFF;
+        border: 1px solid #4DD5BC;
+        gap: 10px;
+    }
+}
