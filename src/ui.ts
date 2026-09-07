@@ -3,7 +3,8 @@ export const dom = {
     playerRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="player"]')),
     sizeRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="size"]')),
     settingsSummaryLabels: Array.from(document.querySelectorAll('.settings__summary-label')),
-    settingsPreviewImg: document.querySelector<HTMLImageElement>('.settings__preview-image')
+    settingsPreviewImg: document.querySelector<HTMLImageElement>('.settings__preview-image'),
+    gameCards: document.querySelector('.game__cards')
 };
 
 export function initDom() {
@@ -28,6 +29,12 @@ export function initDom() {
             setSize(size);
         });
     });
+
+    dom.gameCards?.addEventListener('click', (event) => {
+        const card = (event.target as HTMLElement).closest('.game__card');
+        if (card instanceof HTMLButtonElement)
+            toggleCard(card);
+    });
 }
 
 function setTheme(theme: string) {
@@ -40,4 +47,8 @@ function setPlayer(player: string) {
 
 function setSize(size: string) {
     dom.settingsSummaryLabels[2].textContent = size;
+}
+
+function toggleCard(card: HTMLButtonElement) {
+    card.classList.toggle('is-flipped');
 }
