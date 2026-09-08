@@ -1,3 +1,5 @@
+import { template1 } from "./template";
+
 export const dom = {
     themeRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="theme"]')),
     playerRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="player"]')),
@@ -35,6 +37,7 @@ export function initDom() {
         if (card instanceof HTMLButtonElement)
             toggleCard(card);
     });
+    createCards();
 }
 
 function setTheme(theme: string) {
@@ -51,4 +54,11 @@ function setSize(size: string) {
 
 function toggleCard(card: HTMLButtonElement) {
     card.classList.toggle('is-flipped');
+}
+
+function createCards() {
+    if (dom.gameCards) dom.gameCards.innerHTML = "";
+    for (let index = 0; index < 16; index++) {
+        if (dom.gameCards) dom.gameCards.innerHTML += template1();
+    }
 }
