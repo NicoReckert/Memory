@@ -1,4 +1,4 @@
-const cards = [
+export const cards = [
     { id: 1, image: "./src/assets/img/Property 1=Component 22.svg" },
     { id: 2, image: "./src/assets/img/Property 1=Component 22(0).svg" },
     { id: 3, image: "./src/assets/img/Property 1=Component 22(1).svg" },
@@ -19,9 +19,8 @@ const cards = [
     { id: 18, image: "./src/assets/img/Property 1=Component 22(16).svg" },
 ]
 
-
-export function template1() {
-    let curentCard = cards[Math.floor(Math.random() * cards.length)];
+export function template1(curentCard: any) {
+    // let curentCard = cards[Math.floor(Math.random() * cards.length)];
     return `<button class="game__card">
                 <div class="game__card-inner">
                     <div class="game__card-face game__card-face--front">

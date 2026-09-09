@@ -1,4 +1,5 @@
 import { template1 } from "./template";
+import { cards } from "./template";
 
 export const dom = {
     themeRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="theme"]')),
@@ -56,9 +57,16 @@ function toggleCard(card: HTMLButtonElement) {
     card.classList.toggle('is-flipped');
 }
 
+let shuffledCards = [];
+let selectedCards = [];
+
 function createCards() {
+    shuffledCards = [...cards].sort(() => Math.random() - 0.5);
+    selectedCards = shuffledCards.slice(0, 8);
+    const gameCards = [...selectedCards, ...selectedCards];
+    const selectedGameCards = [...gameCards].sort(() => Math.random() - 0.5)
     if (dom.gameCards) dom.gameCards.innerHTML = "";
-    for (let index = 0; index < 16; index++) {
-        if (dom.gameCards) dom.gameCards.innerHTML += template1();
+    for (let index = 0; index < selectedGameCards.length; index++) {
+        if (dom.gameCards) dom.gameCards.innerHTML += template1(selectedGameCards[index]);
     }
 }
