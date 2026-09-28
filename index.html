@@ -9,19 +9,16 @@
 
 <body>
     <div class="page">
-        <main class="hero">
+        <main class="hero" id="hero">
             <div class="hero__text">
                 <h2 class="hero__subtitle">It’s play time.</h2>
                 <h1 class="hero__title">Ready to play?</h1>
             </div>
-            <button class="hero__button"><img src="./src/assets/icons/stadia_controller.svg" alt="">Play<img
-                    src="./src/assets/icons/Arrow 1.svg" alt=""></button>
+            <button class="hero__button" id="hero-button"><img src="./src/assets/icons/stadia_controller.svg"
+                    alt="">Play<img src="./src/assets/icons/Arrow 1.svg" alt=""></button>
         </main>
     </div>
-    <footer>
-
-    </footer>
-    <div class="settings">
+    <div class="settings d-none" id="settings">
         <div class="settings__container">
             <h2 class="settings__title">Settings</h2>
             <div class="settings__content">
@@ -64,14 +61,15 @@
                         <p class="settings__summary-label">Player</p>
                         <img class="settings__summary-line" src="./src/assets/img/Line 6.svg" alt="">
                         <p class="settings__summary-label">Board size</p>
-                        <button class="settings__start-button"><img class="settings__start-icon"
-                                src="./src/assets/icons/smart_display.svg" alt="">Start</button>
+                        <button class="settings__start-button" id="settings-start-button"><img
+                                class="settings__start-icon" src="./src/assets/icons/smart_display.svg"
+                                alt="">Start</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="game">
+    <div class="game d-none" id="game">
         <div class="game__header">
             <div class="game__players">
                 <div class="game__player">
@@ -87,9 +85,11 @@
             </div>
             <div class="game__current-player">
                 <p class="game__current-player-label">Current player:</p>
-                <img class="game__current-player-icon" src="./src/assets/icons/label.svg" alt="">
+                <img class="game__current-player-icon" id="game-current-player-icon" src="./src/assets/icons/label.svg"
+                    alt="">
             </div>
-            <button class="game__exit-button"><img src="./src/assets/icons/move_item.svg" alt="">Exit game</button>
+            <button class="game__exit-button" id="game-exit-button"><img src="./src/assets/icons/move_item.svg"
+                    alt="">Exit game</button>
         </div>
         <div class="game__cards">
         </div>

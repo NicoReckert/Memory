@@ -295,13 +295,20 @@ body {
     }
 
     &__cards {
-        display: flex;
+        display: grid;
         justify-content: center;
         align-items: center;
         padding: 48px 0px;
         gap: 16px;
-        flex-wrap: wrap;
-        max-width: 529px;
+    }
+
+    &__cards--16 {
+        grid-template-columns: repeat(4, 120px);
+    }
+
+    &__cards--24,
+    &__cards--36 {
+        grid-template-columns: repeat(6, 120px);
     }
 
     &__card {
@@ -334,4 +341,8 @@ body {
     &__card.is-flipped &__card-inner {
         transform: rotateY(180deg);
     }
+}
+
+.d-none {
+    display: none;
 }
