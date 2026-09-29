@@ -21,7 +21,7 @@ export const cards = [
 
 export function template1(curentCard: any) {
     // let curentCard = cards[Math.floor(Math.random() * cards.length)];
-    return `<button class="game__card">
+    return `<button class="game__card" data-card-id="${curentCard.id}">
                 <div class="game__card-inner">
                     <div class="game__card-face game__card-face--front">
                         <img src="./src/assets/img/Property 1=Component 21.svg" alt="">
