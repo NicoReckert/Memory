@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="page">
+    <section class="page">
         <main class="hero" id="hero">
             <div class="hero__text">
                 <h2 class="hero__subtitle">It’s play time.</h2>
@@ -17,8 +17,8 @@
             <button class="hero__button" id="hero-button"><img src="./src/assets/icons/stadia_controller.svg"
                     alt="">Play<img src="./src/assets/icons/Arrow 1.svg" alt=""></button>
         </main>
-    </div>
-    <div class="settings d-none" id="settings">
+    </section>
+    <section class="settings d-none" id="settings">
         <div class="settings__container">
             <h2 class="settings__title">Settings</h2>
             <div class="settings__content">
@@ -61,15 +61,15 @@
                         <p class="settings__summary-label">Player</p>
                         <img class="settings__summary-line" src="./src/assets/img/Line 6.svg" alt="">
                         <p class="settings__summary-label">Board size</p>
-                        <button class="settings__start-button settings__start-button--inactive" id="settings-start-button"><img
-                                class="settings__start-icon" src="./src/assets/icons/smart_display.svg"
-                                alt="">Start</button>
+                        <button class="settings__start-button settings__start-button--inactive"
+                            id="settings-start-button"><img class="settings__start-icon"
+                                src="./src/assets/icons/smart_display.svg" alt="">Start</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="game d-none" id="game">
+    </section>
+    <section class="game d-none" id="game">
         <div class="game__header">
             <div class="game__players">
                 <div class="game__player">
@@ -92,6 +92,15 @@
                     alt="">Exit game</button>
         </div>
         <div class="game__cards">
+        </div>
+    </section>
+    <div class="popup d-none" id="popup">
+        <div class="popup__window" id="popup-window">
+            <p class="popup__text">Are you sure you want to quit the game?</p>
+            <div class="popup__buttons">
+                <button class="popup__button popup__button--back" id="popup-back-button">Back to game</button>
+                <button class="popup__button popup__button--exit" id="popup-exit-button">Exit game</button>
+            </div>
         </div>
     </div>
     <script type="module" src="./src/main.ts"></script>

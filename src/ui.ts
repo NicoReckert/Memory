@@ -25,7 +25,11 @@ export const dom = {
     gameExitButton: document.getElementById('game-exit-button'),
     gameCurrentPlayerIcon: document.getElementById('game-current-player-icon') as HTMLImageElement,
     bluePoints: document.querySelector('.game__player-points-blue'),
-    orangePoints: document.querySelector('.game__player-points-orange')
+    orangePoints: document.querySelector('.game__player-points-orange'),
+    popup: document.getElementById('popup'),
+    popupWindow: document.getElementById('popup-window'),
+    popupBackButton: document.getElementById('popup-back-button'),
+    popupExitButton: document.getElementById('popup-exit-button'),
 };
 
 export function initDom() {
@@ -71,7 +75,9 @@ export function initDom() {
 
     dom.heroButton?.addEventListener('click', gotToSettings);
     dom.settingsStartButton?.addEventListener('click', startGame);
-    dom.gameExitButton?.addEventListener('click', backToSettings);
+    dom.gameExitButton?.addEventListener('click', openPopup);
+    dom.popupBackButton?.addEventListener('click', backToGame);
+    dom.popupExitButton?.addEventListener('click', backToSettings);
 }
 
 function setTheme(theme: string) {
@@ -123,7 +129,7 @@ function startGame() {
     bluePoints = 0;
     orangePoints = 0;
     matchedPairs = 0;
-     dom.bluePoints!.textContent = "0";
+    dom.bluePoints!.textContent = "0";
     dom.orangePoints!.textContent = "0";
     dom.settings?.classList.add('d-none');
     dom.game?.classList.remove('d-none');
@@ -131,9 +137,24 @@ function startGame() {
     changeCurrentPlayer();
 }
 
+function openPopup() {
+    dom.popup?.classList.remove('d-none');
+    dom.popupWindow?.classList.add('popup__window--visible')
+}
+
 function backToSettings() {
     dom.game?.classList.add('d-none');
     dom.settings?.classList.remove('d-none');
+    backToGame();
+}
+
+function backToGame() {
+    dom.popup?.classList.add('popup--not-visible')
+    setTimeout(() => {
+        dom.popup?.classList.add('d-none');
+        dom.popup?.classList.remove('popup--not-visible')
+        dom.popupWindow?.classList.remove('popup__window--visible')
+    }, 120);
 }
 
 function changeCurrentPlayer() {
@@ -160,16 +181,16 @@ function checkPair() {
     const secondId = secondCard.dataset.cardId;
 
     if (firstId === secondId) {
-    firstCard.classList.add('is-matched');
-    secondCard.classList.add('is-matched');
+        firstCard.classList.add('is-matched');
+        secondCard.classList.add('is-matched');
 
-    addPoint();
+        addPoint();
 
-    matchedPairs++;
+        matchedPairs++;
 
-    flippedCards = [];
-    return;
-}
+        flippedCards = [];
+        return;
+    }
 
     isCheckingPair = true;
 
