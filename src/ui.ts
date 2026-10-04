@@ -46,7 +46,7 @@ export function initDom() {
     dom.playerRadioButtons.forEach(radio => {
         radio.addEventListener('change', () => {
             const player = radio.parentElement?.textContent?.trim() ?? '';
-            setPlayer(player);
+            setPlayer(player + " Player");
             currentPlayer = player;
             checkStartButton();
         });
@@ -55,7 +55,8 @@ export function initDom() {
     dom.sizeRadioButtons.forEach(radio => {
         radio.addEventListener('change', () => {
             const size = radio.parentElement?.textContent?.trim() ?? '';
-            setSize(size);
+            const formattedSize = size.replace('cards', 'Cards');
+            setSize("Board-" + formattedSize);
             cardCount = Number(size.trim().split(" ")[0]);
             dom.gameCards?.classList.remove(
                 "game__cards--16",
@@ -76,6 +77,10 @@ export function initDom() {
     dom.heroButton?.addEventListener('click', gotToSettings);
     dom.settingsStartButton?.addEventListener('click', startGame);
     dom.gameExitButton?.addEventListener('click', openPopup);
+    dom.popup?.addEventListener('click', backToGame);
+    dom.popupWindow?.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
     dom.popupBackButton?.addEventListener('click', backToGame);
     dom.popupExitButton?.addEventListener('click', backToSettings);
 }
@@ -154,7 +159,7 @@ function backToGame() {
         dom.popup?.classList.add('d-none');
         dom.popup?.classList.remove('popup--not-visible')
         dom.popupWindow?.classList.remove('popup__window--visible')
-    }, 120);
+    }, 250);
 }
 
 function changeCurrentPlayer() {

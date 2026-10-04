@@ -14,8 +14,10 @@
                 <h2 class="hero__subtitle">It’s play time.</h2>
                 <h1 class="hero__title">Ready to play?</h1>
             </div>
-            <button class="hero__button" id="hero-button"><img src="./src/assets/icons/stadia_controller.svg"
-                    alt="">Play<img src="./src/assets/icons/Arrow 1.svg" alt=""></button>
+            <button class="hero__button" id="hero-button"><img class="hero__button-img"
+                    src="./src/assets/icons/stadia_controller.svg" alt="">Play<img class="hero__button-arrow"
+                    src="./src/assets/icons/Arrow 1.svg" alt=""></button>
+            <img class="hero__img" src="./src/assets/img/stadia_controller.svg" alt="">
         </main>
     </section>
     <section class="settings d-none" id="settings">
@@ -28,18 +30,31 @@
                                 alt="">Game
                             themes</h3>
                         <ul class="settings__list">
-                            <li class="settings__item"><input type="radio" name="theme">Code vibes theme</li>
-                            <li class="settings__item"><input type="radio" name="theme">Gaming theme</li>
-                            <li class="settings__item"><input type="radio" name="theme">DA Projects theme</li>
-                            <li class="settings__item"><input type="radio" name="theme">Foods theme</li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio"
+                                        name="theme">Code vibes theme<img class="settings__line"
+                                        src="./src/assets/img/Line 3.svg" alt=""></label>
+                            </li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio"
+                                        name="theme">Gaming theme<img class="settings__line"
+                                        src="./src/assets/img/Line 3.svg" alt=""></label></li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio"
+                                        name="theme">DA Projects theme<img class="settings__line"
+                                        src="./src/assets/img/Line 3.svg" alt=""></label></li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio"
+                                        name="theme">Foods theme<img class="settings__line"
+                                        src="./src/assets/img/Line 3.svg" alt=""></label></li>
                         </ul>
                     </div>
                     <div class="settings__section">
                         <h3 class="settings__subtitle"><img class="settings__icon"
                                 src="./src/assets/icons/chess_pawn.svg" alt="">Choose player</h3>
                         <ul class="settings__list">
-                            <li class="settings__item"><input type="radio" name="player">Blue</li>
-                            <li class="settings__item"><input type="radio" name="player">Orange</li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio"
+                                        name="player">Blue<img class="settings__line" src="./src/assets/img/Line 3.svg"
+                                        alt=""></label></li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio"
+                                        name="player">Orange<img class="settings__line"
+                                        src="./src/assets/img/Line 3.svg" alt=""></label></li>
                         </ul>
                     </div>
                     <div class="settings__section">
@@ -47,9 +62,15 @@
                                 alt="">Board
                             size</h3>
                         <ul class="settings__list">
-                            <li class="settings__item"><input type="radio" name="size">16 cards</li>
-                            <li class="settings__item"><input type="radio" name="size">24 cards</li>
-                            <li class="settings__item"><input type="radio" name="size">36 cards</li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio" name="size">16
+                                    cards<img class="settings__line" src="./src/assets/img/Line 3.svg" alt=""></label>
+                            </li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio" name="size">24
+                                    cards<img class="settings__line" src="./src/assets/img/Line 3.svg" alt=""></label>
+                            </li>
+                            <li class="settings__item"><label class="settings__label"><input type="radio" name="size">36
+                                    cards<img class="settings__line" src="./src/assets/img/Line 3.svg" alt=""></label>
+                            </li>
                         </ul>
                     </div>
                 </div>
