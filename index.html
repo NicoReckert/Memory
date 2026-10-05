@@ -22,10 +22,13 @@
     </section>
     <section class="settings d-none" id="settings">
         <div class="settings__container">
-            <h2 class="settings__title">Settings</h2>
+            <div class="settings__header">
+                <h2 class="settings__title">Settings</h2>
+                <img class="settings__title-line" src="./src/assets/img/Line 3(1).svg" alt="">
+            </div>
             <div class="settings__content">
                 <div class="settings__options">
-                    <div class="settings__section">
+                    <div class="settings__section settings__section--theme">
                         <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/palette.svg"
                                 alt="">Game
                             themes</h3>
@@ -37,15 +40,9 @@
                             <li class="settings__item"><label class="settings__label"><input type="radio"
                                         name="theme">Gaming theme<img class="settings__line"
                                         src="./src/assets/img/Line 3.svg" alt=""></label></li>
-                            <li class="settings__item"><label class="settings__label"><input type="radio"
-                                        name="theme">DA Projects theme<img class="settings__line"
-                                        src="./src/assets/img/Line 3.svg" alt=""></label></li>
-                            <li class="settings__item"><label class="settings__label"><input type="radio"
-                                        name="theme">Foods theme<img class="settings__line"
-                                        src="./src/assets/img/Line 3.svg" alt=""></label></li>
                         </ul>
                     </div>
-                    <div class="settings__section">
+                    <div class="settings__section settings__section--player">
                         <h3 class="settings__subtitle"><img class="settings__icon"
                                 src="./src/assets/icons/chess_pawn.svg" alt="">Choose player</h3>
                         <ul class="settings__list">
@@ -78,9 +75,15 @@
                     <img class="settings__preview-image" src="./src/assets/img/Theme Visual(1).svg" alt="">
                     <div class="settings__summary">
                         <p class="settings__summary-label">Theme</p>
-                        <img class="settings__summary-line" src="./src/assets/img/Line 6.svg" alt="">
+                        <div class="settings__summary-line-wrapper">
+                            <img class="settings__summary-line settings__summary-line--theme"
+                                src="./src/assets/img/Line 6.svg" alt="">
+                        </div>
                         <p class="settings__summary-label">Player</p>
-                        <img class="settings__summary-line" src="./src/assets/img/Line 6.svg" alt="">
+                        <div class="settings__summary-line-wrapper">
+                            <img class="settings__summary-line settings__summary-line--player"
+                                src="./src/assets/img/Line 6.svg" alt="">
+                        </div>
                         <p class="settings__summary-label">Board size</p>
                         <button class="settings__start-button settings__start-button--inactive"
                             id="settings-start-button"><img class="settings__start-icon"
