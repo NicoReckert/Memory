@@ -1,0 +1,41 @@
+export const codeVibesCards = [
+    { id: 1, image: "./src/assets/img/code-vibes-01.svg" },
+    { id: 2, image: "./src/assets/img/code-vibes-02.svg" },
+    { id: 3, image: "./src/assets/img/code-vibes-03.svg" },
+    { id: 4, image: "./src/assets/img/code-vibes-04.svg" },
+    { id: 5, image: "./src/assets/img/code-vibes-05.svg" },
+    { id: 6, image: "./src/assets/img/code-vibes-06.svg" },
+    { id: 7, image: "./src/assets/img/code-vibes-07.svg" },
+    { id: 8, image: "./src/assets/img/code-vibes-08.svg" },
+    { id: 9, image: "./src/assets/img/code-vibes-09.svg" },
+    { id: 10, image: "./src/assets/img/code-vibes-10.svg" },
+    { id: 11, image: "./src/assets/img/code-vibes-11.svg" },
+    { id: 12, image: "./src/assets/img/code-vibes-12.svg" },
+    { id: 13, image: "./src/assets/img/code-vibes-13.svg" },
+    { id: 14, image: "./src/assets/img/code-vibes-14.svg" },
+    { id: 15, image: "./src/assets/img/code-vibes-15.svg" },
+    { id: 16, image: "./src/assets/img/code-vibes-16.svg" },
+    { id: 17, image: "./src/assets/img/code-vibes-17.svg" },
+    { id: 18, image: "./src/assets/img/code-vibes-18.svg" }
+]
+
+export const gamingCards = [
+    { id: 1, image: "./src/assets/img/gaming-01.svg" },
+    { id: 2, image: "./src/assets/img/gaming-02.svg" },
+    { id: 3, image: "./src/assets/img/gaming-03.svg" },
+    { id: 4, image: "./src/assets/img/gaming-04.svg" },
+    { id: 5, image: "./src/assets/img/gaming-05.svg" },
+    { id: 6, image: "./src/assets/img/gaming-06.svg" },
+    { id: 7, image: "./src/assets/img/gaming-07.svg" },
+    { id: 8, image: "./src/assets/img/gaming-08.svg" },
+    { id: 9, image: "./src/assets/img/gaming-09.svg" },
+    { id: 10, image: "./src/assets/img/gaming-10.svg" },
+    { id: 11, image: "./src/assets/img/gaming-11.svg" },
+    { id: 12, image: "./src/assets/img/gaming-12.svg" },
+    { id: 13, image: "./src/assets/img/gaming-13.svg" },
+    { id: 14, image: "./src/assets/img/gaming-14.svg" },
+    { id: 15, image: "./src/assets/img/gaming-15.svg" },
+    { id: 16, image: "./src/assets/img/gaming-16.svg" },
+    { id: 17, image: "./src/assets/img/gaming-17.svg" },
+    { id: 18, image: "./src/assets/img/gaming-18.svg" }
+]

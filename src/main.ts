@@ -1,5 +1,9 @@
 import './styles/style.scss'
 import './styles/font.scss'
-import { initDom } from './ui'
+import { initSettings } from './settings';
+import { initGame } from './game';
+import { initPopup } from './popup';
 
-initDom();
+initSettings();
+initGame();
+initPopup();
