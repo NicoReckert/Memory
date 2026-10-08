@@ -77,7 +77,7 @@ button {
             }
 
             .hero__button-arrow {
-                content: url(../assets/icons/Arrow\ 1.2.svg);
+                content: url(../assets/icons/arrow-right-hover.svg);
             }
         }
 
@@ -88,7 +88,7 @@ button {
         &-arrow {
             width: 40px;
             object-fit: cover;
-            content: url(../assets/icons/Arrow\ 1.svg);
+            content: url(../assets/icons/arrow-right.svg);
         }
     }
 
@@ -206,13 +206,13 @@ button {
 
         &:has(.settings__section--theme input[type="radio"]:checked) {
             .settings__summary-line--theme {
-                content: url("../assets/img/Line\ 5.svg");
+                content: url("../assets/img/settings-summary-line-active.svg");
             }
         }
 
         &:has(.settings__section--player input[type="radio"]:checked) {
             .settings__summary-line--player {
-                content: url("../assets/img/Line\ 5.svg");
+                content: url("../assets/img/settings-summary-line-active.svg");
             }
         }
     }

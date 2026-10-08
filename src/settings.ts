@@ -3,13 +3,17 @@ import { dom } from "./dom";
 export let cardCount: number = 0;
 export let currentPlayer: string = "";
 export let currentTheme: string = "";
+const themeImages = [
+    "theme-code-vibes.svg",
+    "theme-gaming.svg",
+];
 
 export function initSettings() {
     dom.themeRadioButtons.forEach((radio, index) => {
         radio.addEventListener('change', () => {
             const theme = radio.parentElement?.textContent?.trim() ?? '';
             setTheme(theme);
-            if (dom.settingsPreviewImg) dom.settingsPreviewImg.src = `./src/assets/img/Theme Visual(${index + 1}).svg`;
+            if (dom.settingsPreviewImg) dom.settingsPreviewImg.src = `./src/assets/img/${themeImages[index]}`;
             currentTheme = theme;
             checkStartButton();
         });

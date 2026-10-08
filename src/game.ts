@@ -81,7 +81,7 @@ function switchPlayer() {
 }
 
 function changeCurrentPlayer() {
-    if (dom.gameCurrentPlayerIcon) dom.gameCurrentPlayerIcon.src = currentPlayer === "Blue" ? "./src/assets/icons/label.svg" : "./src/assets/icons/label(1).svg";
+    if (dom.gameCurrentPlayerIcon) dom.gameCurrentPlayerIcon.src = currentPlayer === "Blue" ? "./src/assets/icons/blue-player-label.svg" : "./src/assets/icons/orange-player-label.svg";
 }
 
 function startGame() {
