@@ -30,3 +30,8 @@ function backToSettings() {
     dom.settings?.classList.remove('d-none');
     backToGame();
 }
+
+export function setPopupTheme(classNamePopup: string) {
+    dom.popup?.classList.remove("popup--code-vibes", "popup--gaming");
+    dom.popup?.classList.add(classNamePopup);
+}

@@ -1,7 +1,8 @@
 import { dom } from "./dom";
 import { template1 } from "./template";
 import { cardCount, currentPlayer, currentTheme, setCurrentPlayer } from "./settings";
-import { codeVibesCards, gamingCards } from "./cards";
+import { getThemeSettings } from "./theme";
+import { setPopupTheme } from "./popup";
 
 let flippedCards: HTMLButtonElement[] = [];
 let isCheckingPair = false;
@@ -20,14 +21,14 @@ export function initGame() {
     dom.settingsStartButton?.addEventListener('click', startGame);
 }
 
-function createCards(cards: { id: number; image: string }[]) {
+function createCards(currentCardBack: any, cards: { id: number; image: string }[]) {
     shuffledCards = [...cards].sort(() => Math.random() - 0.5);
     selectedCards = shuffledCards.slice(0, cardCount / 2);
     const gameCards = [...selectedCards, ...selectedCards];
     const selectedGameCards = [...gameCards].sort(() => Math.random() - 0.5)
     if (dom.gameCards) dom.gameCards.innerHTML = "";
     for (let index = 0; index < selectedGameCards.length; index++) {
-        if (dom.gameCards) dom.gameCards.innerHTML += template1(selectedGameCards[index]);
+        if (dom.gameCards) dom.gameCards.innerHTML += template1(currentCardBack, selectedGameCards[index]);
     }
 }
 
@@ -81,11 +82,18 @@ function switchPlayer() {
 }
 
 function changeCurrentPlayer() {
-    if (dom.gameCurrentPlayerIcon) dom.gameCurrentPlayerIcon.src = currentPlayer === "Blue" ? "./src/assets/icons/blue-player-label.svg" : "./src/assets/icons/orange-player-label.svg";
+    const themeSettings = getThemeSettings(currentTheme);
+    if (!dom.gameCurrentPlayerIcon || !themeSettings) return;
+    dom.gameCurrentPlayerIcon.src =
+        currentPlayer === "Blue"
+            ? themeSettings.playerIcons.Blue
+            : themeSettings.playerIcons.Orange;
 }
 
 function startGame() {
     if (!currentTheme || !currentPlayer || !cardCount) return;
+    const themeSettings = getThemeSettings(currentTheme);
+    if (!themeSettings) return
     bluePoints = 0;
     orangePoints = 0;
     matchedPairs = 0;
@@ -93,7 +101,11 @@ function startGame() {
     dom.orangePoints!.textContent = "0";
     dom.settings?.classList.add('d-none');
     dom.game?.classList.remove('d-none');
-    let currentCards = currentTheme === "Code vibes theme" ? codeVibesCards : gamingCards;
-    createCards(currentCards);
+    createCards(themeSettings.cardBackSrc, themeSettings.cards);
+    dom.game?.classList.remove("game--code-vibes", "game--gaming");
+    dom.game?.classList.add(themeSettings.className);
+    setPopupTheme(themeSettings.classNamePopup);
+    if (dom.popupExitButton) dom.popupExitButton.textContent = themeSettings.popupExitText;
+    if (dom.popupBackButton) dom.popupBackButton.textContent = themeSettings.popupBackText;
     changeCurrentPlayer();
 }

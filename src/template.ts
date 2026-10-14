@@ -1,11 +1,11 @@
-export function template1(curentCard: any) {
-    return `<button class="game__card" data-card-id="${curentCard.id}">
+export function template1(currentCardBack: any, currentCard: any) {
+    return `<button class="game__card" data-card-id="${currentCard.id}">
                 <div class="game__card-inner">
                     <div class="game__card-face game__card-face--front">
-                        <img src="./src/assets/img/card-back-code-vibes.svg" alt="">
+                        <img src="${currentCardBack}" alt="">
                     </div>
                     <div class="game__card-face game__card-face--back">
-                        <img src="${curentCard.image}" alt="">
+                        <img src="${currentCard.image}" alt="">
                     </div>
                 </div>
             </button>`;

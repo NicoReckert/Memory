@@ -335,9 +335,11 @@ button {
 }
 
 .game {
+    --card-width: 120px;
+    --card-height: 120px;
+
     position: absolute;
     inset: 0;
-    background-color: black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -355,39 +357,19 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #86E9D633;
-        padding: 17px 20px;
-        gap: 20px;
     }
 
     &__player {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 4px;
-    }
-
-    &__player-name-blue {
-        color: #2BB1FF;
-        font-size: 24px;
-        font-family: 'RedRose-Bold';
-    }
-
-    &__player-name-orange {
-        color: #F58E39;
-        font-size: 24px;
-        font-family: 'RedRose-Bold';
     }
 
     &__player-points-blue {
-        color: #2BB1FF;
-        font-size: 24px;
         font-family: 'RedRose-Bold';
     }
 
     &__player-points-orange {
-        color: #F58E39;
-        font-size: 24px;
         font-family: 'RedRose-Bold';
     }
 
@@ -395,12 +377,9 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 8px;
     }
 
     &__current-player-label {
-        font-size: 26px;
-        font-family: 'RedRose-Regular';
         color: #FFFFFF;
     }
 
@@ -408,12 +387,7 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #86E9D633;
-        padding: 16px 24px;
-        font-family: 'RedRose-Bold';
-        font-size: 24px;
         color: #FFFFFF;
-        border: 1px solid #4DD5BC;
         gap: 10px;
 
         &:hover {
@@ -427,21 +401,20 @@ button {
         justify-content: center;
         align-items: center;
         padding: 48px 0px;
-        gap: 16px;
     }
 
     &__cards--16 {
-        grid-template-columns: repeat(4, 120px);
+        grid-template-columns: repeat(4, var(--card-width));
     }
 
     &__cards--24,
     &__cards--36 {
-        grid-template-columns: repeat(6, 120px);
+        grid-template-columns: repeat(6, var(--card-width));
     }
 
     &__card {
-        height: 120px;
-        width: 120px;
+        width: var(--card-width);
+        height: var(--card-height);
         aspect-ratio: 1 / 1;
         position: relative;
         background-color: transparent;
@@ -459,6 +432,8 @@ button {
     &__card-face {
         position: absolute;
         inset: 0;
+        width: 100%;
+        height: 100%;
         backface-visibility: hidden;
 
         &--back {
@@ -468,6 +443,173 @@ button {
 
     &__card.is-flipped &__card-inner {
         transform: rotateY(180deg);
+    }
+
+    &--code-vibes {
+        --card-width: 120px;
+        --card-height: 120px;
+
+        background-color: #303130;
+
+        .game__players {
+            background-color: #86E9D633;
+            padding: 17px 20px;
+            gap: 20px;
+        }
+
+        .game__player {
+            gap: 4px;
+        }
+
+        .game__player-name-blue {
+            color: #2BB1FF;
+            font-size: 24px;
+            font-family: 'RedRose-Bold';
+        }
+
+        .game__player-name-orange {
+            color: #F58E39;
+            font-size: 24px;
+            font-family: 'RedRose-Bold';
+        }
+
+        .game__player-points-blue {
+            color: #2BB1FF;
+            font-size: 24px;
+        }
+
+        .game__player-points-orange {
+            color: #F58E39;
+            font-size: 24px;
+        }
+
+        .game__player-icon-blue {
+            content: url("../assets/icons/blue-player-label-code-vibes.svg");
+        }
+
+        .game__player-icon-orange {
+            content: url("../assets/icons/orange-player-label-code-vibes.svg");
+        }
+
+        .game__current-player {
+            gap: 8px;
+        }
+
+        .game__current-player-label {
+            font-size: 26px;
+            font-family: 'RedRose-Regular';
+        }
+
+        .game__cards {
+            gap: 16px;
+        }
+
+        .game__card {
+            height: 120px;
+            width: 120px;
+        }
+
+        .game__exit-button {
+            background-color: #86E9D633;
+            padding: 16px 24px;
+            font-family: 'RedRose-Bold';
+            font-size: 24px;
+            border: 1px solid #4DD5BC;
+
+            &:hover {
+                box-shadow: inset 0 0 0 1px #4DD5BC;
+                filter: drop-shadow(4px 4px 6px rgba(77, 213, 188, 0.2));
+            }
+        }
+    }
+
+    &--gaming {
+        --card-width: 105px;
+        --card-height: 120px;
+
+        background-color: #284F5F;
+
+        .game__header {
+            background-color: #FD96C933;
+            padding: 24px;
+            border-radius: 10px;
+        }
+
+        .game__players {
+            background-color: #FFFFFF;
+            padding: 8px 16px;
+            gap: 40px;
+            border-radius: 10px;
+        }
+
+        .game__player {
+            gap: 8px;
+        }
+
+        .game__player-name-blue,
+        .game__player-name-orange {
+            display: none;
+        }
+
+        .game__player-points-blue {
+            color: #097FC5;
+            font-size: 30px;
+        }
+
+        .game__player-points-orange {
+            color: #EA6900;
+            font-size: 30px;
+        }
+
+        .game__player-icon-blue {
+            width: 22px;
+            height: 22px;
+            content: url("../assets/icons/blue-player-label-gaming.svg");
+        }
+
+        .game__player-icon-orange {
+            width: 22px;
+            height: 22px;
+            content: url("../assets/icons/orange-player-label-gaming.svg");
+        }
+
+        .game__current-player {
+            gap: 18px;
+        }
+
+        .game__current-player-label {
+            font-size: 32px;
+            font-family: 'Orbitron-Bold';
+            letter-spacing: 7%;
+        }
+
+        .game__cards {
+            gap: 12px;
+        }
+
+        .game__card {
+            height: 120px;
+            width: 105px;
+        }
+
+        .game__exit-button {
+            background-color: #ED1B7614;
+            padding: 12px 20px;
+            font-family: 'Orbitron-Bold';
+            font-size: 20px;
+            letter-spacing: 4%;
+            border: 2px solid #E71C4F;
+            border-radius: 10px;
+
+            &:hover {
+                box-shadow: inset 0 0 0 1px #E71C4F;
+                filter: drop-shadow(3px 3px 5px rgba(47, 46, 46, 0.2));
+
+                img {
+                    content: url("../assets/icons/exit-icon-active.svg");
+                }
+            }
+        }
     }
 }
 
@@ -479,6 +621,7 @@ button {
     justify-content: center;
     align-items: center;
     opacity: 1;
+    overflow: hidden;
 
     &--not-visible {
         animation: fadeOut 250ms ease-in-out forwards;
@@ -495,17 +638,14 @@ button {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-color: #FFFFFF;
         padding: 40px;
-        gap: 54px;
-        max-width: 539px;
-        transform: translateY(-100dvh);
         opacity: 1;
 
         &--visible {
             animation: flyIn 350ms ease-in-out forwards;
         }
     }
+
 
     @keyframes flyIn {
         100% {
@@ -514,9 +654,6 @@ button {
     }
 
     &__text {
-        font-family: 'RedRose-Bold';
-        font-size: 32px;
-        color: #303131;
         text-align: center;
     }
 
@@ -531,34 +668,104 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 16px 24px;
-        font-family: 'RedRose-Bold';
-        font-size: 20px;
+    }
 
-        &--back {
-            color: #FFFFFF;
-            background-color: #66CFBC;
-            border: 3px solid transparent;
+    &--code-vibes {
 
-            &:hover {
-                background-color: #66CFBCB2;
-                border: 3px solid #3ABCA4;
-            }
+        .popup__window {
+            background-color: #FFFFFF;
+            gap: 54px;
+            max-width: 539px;
+            transform: translateY(-100dvh);
         }
 
-        &--exit {
-            color: #4DD5BC;
-            background-color: #86E9D624;
-            border: 2px solid #4DD5BC;
-            padding: 17px 25px;
 
-            &:hover {
-                box-shadow: inset 0 0 0 1px #4DD5BC;
-                filter: drop-shadow(4px 4px 6px rgba(77, 213, 188, 0.2));
+        .popup__text {
+            font-family: 'RedRose-Bold';
+            font-size: 32px;
+            color: #303131;
+        }
+
+        .popup__button {
+            padding: 16px 24px;
+            font-family: 'RedRose-Bold';
+            font-size: 20px;
+
+            &--back {
+                color: #FFFFFF;
+                background-color: #66CFBC;
+                border: 3px solid transparent;
+
+                &:hover {
+                    background-color: #66CFBCB2;
+                    border: 3px solid #3ABCA4;
+                }
+            }
+
+            &--exit {
+                color: #4DD5BC;
+                background-color: #86E9D624;
+                border: 2px solid #4DD5BC;
+                padding: 17px 25px;
+
+                &:hover {
+                    box-shadow: inset 0 0 0 1px #4DD5BC;
+                    filter: drop-shadow(4px 4px 6px rgba(77, 213, 188, 0.2));
+                }
+            }
+        }
+    }
+
+
+    &--gaming {
+        .popup__window {
+            background-color: #F0F6F9;
+            gap: 40px;
+            max-width: 481px;
+            border-radius: 20px;
+            transform: translateY(+100dvh);
+        }
+
+        .popup__text {
+            font-family: 'Orbitron-Bold';
+            font-size: 28px;
+            letter-spacing: 2%;
+            color: #294F60;
+        }
+
+        .popup__button {
+            padding: 12px 20px;
+            font-family: 'Orbitron-Bold';
+            font-size: 16px;
+            letter-spacing: 2%;
+            border-radius: 10px;
+
+            &--back {
+                color: #FFFFFF;
+                background-color: #ED1B76;
+                border: 2px solid #E71C4F;
+
+                &:hover {
+                    color: #ED1B76;
+                    background-color: #F2C7DA14;
+                    filter: drop-shadow(3px 3px 5px rgba(47, 46, 46, 0.2));
+                }
+            }
+
+            &--exit {
+                color: #ED1B76;
+                background-color: #ED1B7614;
+                border: 2px solid #E71C4F;
+
+                &:hover {
+                    box-shadow: inset 0 0 0 1px #E71C4F;
+                    filter: drop-shadow(3px 3px 5px rgba(47, 46, 46, 0.2));
+                }
             }
         }
     }
 }
+
 
 .d-none {
     display: none;
