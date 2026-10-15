@@ -21,14 +21,14 @@ export function initGame() {
     dom.settingsStartButton?.addEventListener('click', startGame);
 }
 
-function createCards(currentCardBack: any, cards: { id: number; image: string }[]) {
+function createCards(cards: { id: number; image: string }[]) {
     shuffledCards = [...cards].sort(() => Math.random() - 0.5);
     selectedCards = shuffledCards.slice(0, cardCount / 2);
     const gameCards = [...selectedCards, ...selectedCards];
     const selectedGameCards = [...gameCards].sort(() => Math.random() - 0.5)
     if (dom.gameCards) dom.gameCards.innerHTML = "";
     for (let index = 0; index < selectedGameCards.length; index++) {
-        if (dom.gameCards) dom.gameCards.innerHTML += template1(currentCardBack, selectedGameCards[index]);
+        if (dom.gameCards) dom.gameCards.innerHTML += template1(selectedGameCards[index]);
     }
 }
 
@@ -101,7 +101,7 @@ function startGame() {
     dom.orangePoints!.textContent = "0";
     dom.settings?.classList.add('d-none');
     dom.game?.classList.remove('d-none');
-    createCards(themeSettings.cardBackSrc, themeSettings.cards);
+    createCards(themeSettings.cards);
     dom.game?.classList.remove("game--code-vibes", "game--gaming");
     dom.game?.classList.add(themeSettings.className);
     setPopupTheme(themeSettings.classNamePopup);

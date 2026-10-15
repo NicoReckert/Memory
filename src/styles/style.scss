@@ -365,12 +365,10 @@ button {
         align-items: center;
     }
 
-    &__player-points-blue {
-        font-family: 'RedRose-Bold';
-    }
-
+    &__player-points-blue,
     &__player-points-orange {
         font-family: 'RedRose-Bold';
+        min-width: 30px;
     }
 
     &__current-player {
@@ -389,11 +387,6 @@ button {
         align-items: center;
         color: #FFFFFF;
         gap: 10px;
-
-        &:hover {
-            box-shadow: inset 0 0 0 1px #4DD5BC;
-            filter: drop-shadow(4px 4px 6px rgba(77, 213, 188, 0.2));
-        }
     }
 
     &__cards {
@@ -415,26 +408,27 @@ button {
     &__card {
         width: var(--card-width);
         height: var(--card-height);
-        aspect-ratio: 1 / 1;
+        padding: 0;
         position: relative;
         background-color: transparent;
         border: none;
     }
 
     &__card-inner {
-        position: relative;
         width: 100%;
         height: 100%;
+        position: relative;
         transform-style: preserve-3d;
-        transition: all 300ms ease-in-out;
+        transition: transform 300ms ease-in-out;
     }
 
     &__card-face {
         position: absolute;
         inset: 0;
-        width: 100%;
-        height: 100%;
         backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &--back {
             transform: rotateY(180deg);
@@ -445,10 +439,19 @@ button {
         transform: rotateY(180deg);
     }
 
-    &--code-vibes {
-        --card-width: 120px;
-        --card-height: 120px;
+    @keyframes match-border-flash {
 
+        0%,
+        100% {
+            outline-color: var(--match-color);
+        }
+
+        50% {
+            outline-color: transparent;
+        }
+    }
+
+    &--code-vibes {
         background-color: #303130;
 
         .game__players {
@@ -504,9 +507,12 @@ button {
             gap: 16px;
         }
 
-        .game__card {
-            height: 120px;
-            width: 120px;
+        .game__card-face--front {
+            background: linear-gradient(225deg, rgba(77, 213, 188, 1) 0%, rgba(40, 111, 98, 1) 150%);
+        }
+
+        .game__card-face--back {
+            background-color: #E8F3F0;
         }
 
         .game__exit-button {
@@ -521,6 +527,14 @@ button {
                 filter: drop-shadow(4px 4px 6px rgba(77, 213, 188, 0.2));
             }
         }
+
+        .game__card.is-matched .game__card-face--back {
+            --match-color: #4DD5BC;
+            outline: 5px solid var(--match-color);
+            filter: drop-shadow(6px 6px 8px rgba(77, 213, 188, 0.3));
+            animation: match-border-flash 600ms ease-in-out 2;
+        }
+
     }
 
     &--gaming {
@@ -587,9 +601,22 @@ button {
             gap: 12px;
         }
 
-        .game__card {
-            height: 120px;
-            width: 105px;
+        .game__card-front-icon {
+            display: none;
+        }
+
+        .game__card-face {
+            border-radius: 12px;
+            overflow: hidden;
+            filter: drop-shadow(6px 6px 12px rgba(0, 0, 0, 0.25));
+        }
+
+        .game__card-face--front {
+            background: linear-gradient(220deg, rgba(237, 27, 118, 1) 0%, rgba(10, 40, 53, 1) 140%);
+        }
+
+        .game__card-face--back {
+            background-color: #F6F1F3;
         }
 
         .game__exit-button {
@@ -609,6 +636,13 @@ button {
                     content: url("../assets/icons/exit-icon-active.svg");
                 }
             }
+        }
+
+        .game__card.is-matched .game__card-face--back {
+            --match-color: #ED1B76;
+            outline: 3px solid var(--match-color);
+            filter: drop-shadow(5px 5px 8px rgba(237, 27, 118, 0.3));
+            animation: match-border-flash 600ms ease-in-out 2;
         }
     }
 }
