@@ -1,8 +1,9 @@
 import { dom } from "./dom";
-import { template1 } from "./template";
+import { createCardTemplate } from "./template";
 import { cardCount, currentPlayer, currentTheme, setCurrentPlayer } from "./settings";
 import { getThemeSettings } from "./theme";
 import { setPopupTheme } from "./popup";
+import { showResult, resetResult } from "./result";
 
 let flippedCards: HTMLButtonElement[] = [];
 let isCheckingPair = false;
@@ -11,6 +12,7 @@ let orangePoints = 0;
 let matchedPairs = 0;
 let shuffledCards = [];
 let selectedCards = [];
+let pairTimeout: ReturnType<typeof setTimeout> | null = null;
 
 export function initGame() {
     dom.gameCards?.addEventListener('click', (event) => {
@@ -28,7 +30,7 @@ function createCards(cards: { id: number; image: string }[]) {
     const selectedGameCards = [...gameCards].sort(() => Math.random() - 0.5)
     if (dom.gameCards) dom.gameCards.innerHTML = "";
     for (let index = 0; index < selectedGameCards.length; index++) {
-        if (dom.gameCards) dom.gameCards.innerHTML += template1(selectedGameCards[index]);
+        if (dom.gameCards) dom.gameCards.innerHTML += createCardTemplate(selectedGameCards[index]);
     }
 }
 
@@ -53,14 +55,20 @@ function checkPair() {
         addPoint();
         matchedPairs++;
         flippedCards = [];
+        if (matchedPairs === cardCount / 2) {
+            setTimeout(() => {
+                showResult(bluePoints, orangePoints, currentTheme);
+            }, 3000);
+        }
         return;
     }
     isCheckingPair = true;
-    setTimeout(() => {
+    pairTimeout = setTimeout(() => {
         firstCard.classList.remove('is-flipped');
         secondCard.classList.remove('is-flipped');
         flippedCards = [];
         isCheckingPair = false;
+        pairTimeout = null;
         switchPlayer();
     }, 1500);
 }
@@ -94,6 +102,13 @@ function startGame() {
     if (!currentTheme || !currentPlayer || !cardCount) return;
     const themeSettings = getThemeSettings(currentTheme);
     if (!themeSettings) return
+    resetResult();
+    if (pairTimeout !== null) {
+        clearTimeout(pairTimeout);
+        pairTimeout = null;
+    }
+    flippedCards = [];
+    isCheckingPair = false;
     bluePoints = 0;
     orangePoints = 0;
     matchedPairs = 0;
@@ -108,4 +123,22 @@ function startGame() {
     if (dom.popupExitButton) dom.popupExitButton.textContent = themeSettings.popupExitText;
     if (dom.popupBackButton) dom.popupBackButton.textContent = themeSettings.popupBackText;
     changeCurrentPlayer();
+}
+
+export function resetGame() {
+    if (pairTimeout !== null) {
+        clearTimeout(pairTimeout);
+        pairTimeout = null;
+    }
+    resetResult();
+    flippedCards = [];
+    isCheckingPair = false;
+    bluePoints = 0;
+    orangePoints = 0;
+    matchedPairs = 0;
+    if (dom.bluePoints) dom.bluePoints.textContent = "0";
+    if (dom.orangePoints) dom.orangePoints.textContent = "0";
+    if (dom.resultBluePoints) dom.resultBluePoints.textContent = "0";
+    if (dom.resultOrangePoints) dom.resultOrangePoints.textContent = "0";
+    dom.gameCards?.replaceChildren();
 }

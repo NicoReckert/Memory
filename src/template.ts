@@ -1,4 +1,4 @@
-export function template1(currentCard: any) {
+export function createCardTemplate(currentCard: any) {
     return `<button class="game__card" data-card-id="${currentCard.id}">
                 <div class="game__card-inner">
                     <div class="game__card-face game__card-face--front">

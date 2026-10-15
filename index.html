@@ -29,8 +29,8 @@
             <div class="settings__content">
                 <div class="settings__options">
                     <div class="settings__section settings__section--theme">
-                        <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/theme-icon.svg"
-                                alt="">Game
+                        <h3 class="settings__subtitle"><img class="settings__icon"
+                                src="./src/assets/icons/theme-icon.svg" alt="">Game
                             themes</h3>
                         <ul class="settings__list">
                             <li class="settings__item"><label class="settings__label"><input type="radio"
@@ -47,32 +47,35 @@
                                 src="./src/assets/icons/player-icon.svg" alt="">Choose player</h3>
                         <ul class="settings__list">
                             <li class="settings__item"><label class="settings__label"><input type="radio"
-                                        name="player">Blue<img class="settings__line" src="./src/assets/img/settings-option-line-active.svg"
-                                        alt=""></label></li>
+                                        name="player">Blue<img class="settings__line"
+                                        src="./src/assets/img/settings-option-line-active.svg" alt=""></label></li>
                             <li class="settings__item"><label class="settings__label"><input type="radio"
                                         name="player">Orange<img class="settings__line"
                                         src="./src/assets/img/settings-option-line-active.svg" alt=""></label></li>
                         </ul>
                     </div>
                     <div class="settings__section">
-                        <h3 class="settings__subtitle"><img class="settings__icon" src="./src/assets/icons/board-size-icon.svg"
-                                alt="">Board
+                        <h3 class="settings__subtitle"><img class="settings__icon"
+                                src="./src/assets/icons/board-size-icon.svg" alt="">Board
                             size</h3>
                         <ul class="settings__list">
                             <li class="settings__item"><label class="settings__label"><input type="radio" name="size">16
-                                    cards<img class="settings__line" src="./src/assets/img/settings-option-line-active.svg" alt=""></label>
+                                    cards<img class="settings__line"
+                                        src="./src/assets/img/settings-option-line-active.svg" alt=""></label>
                             </li>
                             <li class="settings__item"><label class="settings__label"><input type="radio" name="size">24
-                                    cards<img class="settings__line" src="./src/assets/img/settings-option-line-active.svg" alt=""></label>
+                                    cards<img class="settings__line"
+                                        src="./src/assets/img/settings-option-line-active.svg" alt=""></label>
                             </li>
                             <li class="settings__item"><label class="settings__label"><input type="radio" name="size">36
-                                    cards<img class="settings__line" src="./src/assets/img/settings-option-line-active.svg" alt=""></label>
+                                    cards<img class="settings__line"
+                                        src="./src/assets/img/settings-option-line-active.svg" alt=""></label>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="settings__preview">
-                    <img class="settings__preview-image" src="./src/assets/img/theme-code-vibes.svg" alt="">
+                    <img class="settings__preview-image" src="./src/assets/img/theme-placeholder.svg" alt="">
                     <div class="settings__summary">
                         <p class="settings__summary-label">Theme</p>
                         <div class="settings__summary-line-wrapper">
@@ -97,20 +100,22 @@
         <div class="game__header">
             <div class="game__players">
                 <div class="game__player">
-                    <img class="game__player-icon-blue" src="./src/assets/icons/blue-player-label-code-vibes.svg" alt="">
+                    <img class="game__player-icon-blue" src="./src/assets/icons/blue-player-label-code-vibes.svg"
+                        alt="">
                     <p class="game__player-name-blue">Blue</p>
                     <p class="game__player-points-blue">0</p>
                 </div>
                 <div class="game__player">
-                    <img class="game__player-icon-orange" src="./src/assets/icons/orange-player-label-code-vibes.svg" alt="">
+                    <img class="game__player-icon-orange" src="./src/assets/icons/orange-player-label-code-vibes.svg"
+                        alt="">
                     <p class="game__player-name-orange">Orange</p>
                     <p class="game__player-points-orange">0</p>
                 </div>
             </div>
             <div class="game__current-player">
                 <p class="game__current-player-label">Current player:</p>
-                <img class="game__current-player-icon" id="game-current-player-icon" src="./src/assets/icons/blue-player-label-code-vibes.svg"
-                    alt="">
+                <img class="game__current-player-icon" id="game-current-player-icon"
+                    src="./src/assets/icons/blue-player-label-code-vibes.svg" alt="">
             </div>
             <button class="game__exit-button" id="game-exit-button"><img src="./src/assets/icons/exit-icon.svg"
                     alt="">Exit game</button>
@@ -125,6 +130,39 @@
                 <button class="popup__button popup__button--back" id="popup-back-button">Back to game</button>
                 <button class="popup__button popup__button--exit" id="popup-exit-button">Exit game</button>
             </div>
+        </div>
+    </div>
+    <div class="result d-none" id="result">
+        <div class="result__window" id="result-window">
+            <h2 class="result__title">Game over</h2>
+            <div class="result__score">
+                <h3 class="result__score-title">Final score</h3>
+                <div class="result__players">
+                    <div class="result__player result__player--blue">
+                        <img class="result__player-icon result__player-icon--blue" src="./src/assets/icons/blue-player-label-code-vibes.svg" alt="">
+                        <p class="result__player-name">Blue</p>
+                        <p class="result__player-points" id="result-blue-points">0</p>
+                    </div>
+                    <div class="result__player result__player--orange">
+                        <img class="result__player-icon result__player-icon--orange" src="./src/assets/icons/orange-player-label-code-vibes.svg" alt="">
+                        <p class="result__player-name">Orange</p>
+                        <p class="result__player-points" id="result-orange-points">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="winner d-none" id="winner">
+        <img class="winner__confetti" src="./src/assets/img/winner-confetti.svg" alt="">
+        <div class="winner__window">
+            <div class="winner__content">
+                <p class="winner__text" id="winner-text">The winner is</p>
+                <h2 class="winner__title" id="winner-title">ORANGE PLAYER</h2>
+            </div>
+            <img class="winner__icon" id="winner-icon" src="./src/assets/img/winner-orange-player.svg" alt="">
+            <button class="winner__button" id="winner-settings-button">
+                Back to start
+            </button>
         </div>
     </div>
     <script type="module" src="./src/main.ts"></script>

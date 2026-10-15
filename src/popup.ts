@@ -1,4 +1,6 @@
 import { dom } from "./dom";
+import { resetSettings } from "./settings";
+import { resetGame } from "./game";
 
 export function initPopup() {
     dom.gameExitButton?.addEventListener('click', openPopup);
@@ -8,7 +10,7 @@ export function initPopup() {
     });
     dom.popupBackButton?.addEventListener('click', backToGame);
     dom.popupExitButton?.addEventListener('click', backToSettings);
-
+    dom.winnerSettingsButton?.addEventListener('click', backToSettings);
 }
 
 function openPopup() {
@@ -26,6 +28,8 @@ function backToGame() {
 }
 
 function backToSettings() {
+    resetGame();
+    resetSettings();
     dom.game?.classList.add('d-none');
     dom.settings?.classList.remove('d-none');
     backToGame();

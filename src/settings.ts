@@ -77,3 +77,25 @@ function gotToSettings() {
     dom.hero?.classList.add('d-none');
     dom.settings?.classList.remove('d-none');
 }
+
+export function resetSettings() {
+    dom.themeRadioButtons.forEach(radio => radio.checked = false);
+    dom.playerRadioButtons.forEach(radio => radio.checked = false);
+    dom.sizeRadioButtons.forEach(radio => radio.checked = false);
+    currentTheme = "";
+    currentPlayer = "";
+    cardCount = 0;
+    dom.settingsSummaryLabels[0].textContent = "Theme";
+    dom.settingsSummaryLabels[1].textContent = "Player";
+    dom.settingsSummaryLabels[2].textContent = "Board size";
+    if (dom.settingsPreviewImg) {
+        dom.settingsPreviewImg.src = './src/assets/img/theme-placeholder.svg';
+    }
+    dom.settingsStartButton?.classList.remove("settings__start-button--active");
+    dom.settingsStartButton?.classList.add("settings__start-button--inactive");
+    dom.gameCards?.classList.remove(
+        "game__cards--16",
+        "game__cards--24",
+        "game__cards--36"
+    );
+}

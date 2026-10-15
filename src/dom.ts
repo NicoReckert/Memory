@@ -1,7 +1,7 @@
 export const dom = {
-    themeRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="theme"]')),
-    playerRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="player"]')),
-    sizeRadioButtons: Array.from(document.querySelectorAll('.settings__item input[name="size"]')),
+    themeRadioButtons: Array.from(document.querySelectorAll<HTMLInputElement>('.settings__item input[name="theme"]')),
+    playerRadioButtons: Array.from(document.querySelectorAll<HTMLInputElement>('.settings__item input[name="player"]')),
+    sizeRadioButtons: Array.from(document.querySelectorAll<HTMLInputElement>('.settings__item input[name="size"]')),
     settingsSummaryLabels: Array.from(document.querySelectorAll('.settings__summary-label')),
     settingsPreviewImg: document.querySelector<HTMLImageElement>('.settings__preview-image'),
     gameCards: document.querySelector('.game__cards'),
@@ -18,4 +18,12 @@ export const dom = {
     popupWindow: document.getElementById('popup-window'),
     popupBackButton: document.getElementById('popup-back-button'),
     popupExitButton: document.getElementById('popup-exit-button'),
+    result: document.getElementById('result'),
+    resultBluePoints: document.getElementById('result-blue-points'),
+    resultOrangePoints: document.getElementById('result-orange-points'),
+    winner: document.getElementById('winner'),
+    winnerText: document.getElementById('winner-text'),
+    winnerTitle: document.getElementById('winner-title'),
+    winnerIcon: document.getElementById('winner-icon') as HTMLImageElement,
+    winnerSettingsButton: document.getElementById('winner-settings-button')
 };
