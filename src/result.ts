@@ -1,4 +1,9 @@
 import { dom } from "./dom";
+import winnerPlayerGaming from "./assets/img/winner-player-gaming.svg";
+import winnerBlueCodeVibes from "./assets/img/winner-blue-player-code-vibes.svg";
+import winnerOrangeCodeVibes from "./assets/img/winner-orange-player-code-vibes.svg";
+import winnerDrawGaming from "./assets/img/winner-draw-gaming.svg";
+import winnerDrawCodeVibes from "./assets/img/winner-draw-code-vibes.svg";
 
 let resultTimeout: ReturnType<typeof setTimeout> | null = null;
 
@@ -91,8 +96,8 @@ function showBlueWinner(isGaming: boolean) {
     dom.winnerTitle!.textContent = isGaming ? 'Blue Player' : 'BLUE PLAYER';
     dom.winnerTitle!.classList.add('winner__title--blue');
     dom.winnerIcon!.src = isGaming
-        ? './src/assets/img/winner-player-gaming.svg'
-        : './src/assets/img/winner-blue-player-code-vibes.svg';
+        ? winnerPlayerGaming
+        : winnerBlueCodeVibes;
 }
 
 /**
@@ -105,8 +110,8 @@ function showOrangeWinner(isGaming: boolean) {
     dom.winnerTitle!.textContent = isGaming ? 'Orange Player' : 'ORANGE PLAYER';
     dom.winnerTitle!.classList.add('winner__title--orange');
     dom.winnerIcon!.src = isGaming
-        ? './src/assets/img/winner-player-gaming.svg'
-        : './src/assets/img/winner-orange-player-code-vibes.svg';
+        ? winnerPlayerGaming
+        : winnerOrangeCodeVibes;
 }
 
 /**
@@ -119,8 +124,8 @@ function showDraw(isGaming: boolean) {
     dom.winnerTitle!.textContent = 'DRAW';
     dom.winnerTitle!.classList.add('winner__title--draw');
     dom.winnerIcon!.src = isGaming
-        ? './src/assets/img/winner-draw-gaming.svg'
-        : './src/assets/img/winner-draw-code-vibes.svg';
+        ? winnerDrawGaming
+        : winnerDrawCodeVibes;
 }
 
 /**

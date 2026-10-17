@@ -1,11 +1,14 @@
 import { dom } from "./dom";
+import themeCodeVibes from "./assets/img/theme-code-vibes.svg";
+import themeGaming from "./assets/img/theme-gaming.svg";
+import themePlaceholder from "./assets/img/theme-placeholder.svg";
 
 export let cardCount: number = 0;
 export let currentPlayer: string = "";
 export let currentTheme: string = "";
 const themeImages = [
-    "theme-code-vibes.svg",
-    "theme-gaming.svg",
+    themeCodeVibes,
+    themeGaming,
 ];
 
 /**
@@ -28,7 +31,7 @@ function initThemeSettings() {
         radio.addEventListener('change', () => {
             const theme = radio.parentElement?.textContent?.trim() ?? '';
             setTheme(theme);
-            if (dom.settingsPreviewImg) dom.settingsPreviewImg.src = `./src/assets/img/${themeImages[index]}`;
+            if (dom.settingsPreviewImg) dom.settingsPreviewImg.src = themeImages[index];
             currentTheme = theme;
             checkStartButton();
         });
@@ -184,7 +187,7 @@ function resetSettingsLabels() {
  */
 function resetSettingsPreview() {
     if (dom.settingsPreviewImg) {
-        dom.settingsPreviewImg.src = './src/assets/img/theme-placeholder.svg';
+        dom.settingsPreviewImg.src = themePlaceholder;
     }
 }
 
