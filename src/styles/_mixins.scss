@@ -1,0 +1,30 @@
+@use './variables' as v;
+
+@mixin scale-hero($scale) {
+    &__title {
+        font-size: v.$hero-title-size * $scale;
+    }
+
+    &__subtitle {
+        font-size: v.$hero-subtitle-size * $scale;
+    }
+
+    &__button {
+        font-size: v.$hero-button-size * $scale;
+        padding: v.$hero-button-padding * $scale;
+        gap: v.$hero-button-gap * $scale;
+        margin-top: v.$hero-button-margin-top * $scale;
+
+        &-img {
+            width: v.$hero-button-img-size * $scale;
+        }
+
+        &-arrow {
+            width: v.$hero-button-arrow-size * $scale;
+        }
+    }
+
+    &__img {
+        width: v.$hero-img-size * $scale;
+    }
+}

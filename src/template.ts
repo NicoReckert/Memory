@@ -1,3 +1,8 @@
+/**
+ * Generates the HTML template for a game card.
+ * @param {any} currentCard - The card data containing its ID and image URL.
+ * @returns {string} The HTML template for the game card.
+ */
 export function createCardTemplate(currentCard: any) {
     return `<button class="game__card" data-card-id="${currentCard.id}">
                 <div class="game__card-inner">

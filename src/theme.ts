@@ -27,6 +27,11 @@ const themes = {
     }
 };
 
+/**
+ * Returns the settings for the specified theme.
+ * @param {string} theme - The theme name.
+ * @returns {typeof themes[keyof typeof themes] | undefined} The theme settings, or undefined if not found.
+ */
 export function getThemeSettings(theme: string) {
     return themes[theme as keyof typeof themes];
 }
